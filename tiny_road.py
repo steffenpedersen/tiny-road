@@ -34,7 +34,7 @@ def make_sidewalk():
     elif scene == "forest":
         tileset = FOREST_TILES
 
-    for spot in range(20):
+    for spot in range(12):
         row += random.choice(tileset)
 
     sidewalk.append(row)
@@ -47,7 +47,7 @@ def make_road():
 
     for row in range(2):
         row = ""
-        for spot in range(20):
+        for spot in range(12):
             tile = random.randint(0,100)
             if tile%5 == 0:
                 row += random.choice(tileset)
@@ -61,7 +61,7 @@ def make_sky():
     sky = ""
     orb = random.choice(SKY)
     
-    for _ in range(20):
+    for _ in range(12):
         sky += " "
     orb_placement = random.randint(0,len(sky)-1)
 
