@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import tweepy
+import os
 
 def get_api(cfg):
   auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
@@ -10,14 +11,14 @@ def get_api(cfg):
 def main():
   # Fill in the values noted in previous step here
   cfg = { 
-    "consumer_key"        : "VALUE",
-    "consumer_secret"     : "VALUE",
-    "access_token"        : "VALUE",
-    "access_token_secret" : "VALUE" 
+    "consumer_key"        : os.environ['TWITTER_API_KEY'],
+    "consumer_secret"     : os.environ['TWITTER_API_KEY_SECRET'],
+    "access_token"        : os.environ['TWITTER_ACCESS_TOKEN'],
+    "access_token_secret" : os.environ['TWITTER_ACCESS_TOKEN_SECRET'] 
     }
 
   api = get_api(cfg)
-  tweet = "Hello, world!"
+  tweet = "Hello, world! Again!"
   status = api.update_status(status=tweet) 
   # Yes, tweet is called 'status' rather confusing
 
