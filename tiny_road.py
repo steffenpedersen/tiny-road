@@ -68,4 +68,6 @@ def make_sky():
     sky = sky[:orb_placement] + orb + sky[orb_placement:]
     return sky
 
-print make_tiny_road()
+if __name__ == "__main__":
+    make_tiny_road()
+    

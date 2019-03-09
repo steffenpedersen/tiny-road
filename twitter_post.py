@@ -2,6 +2,7 @@
 
 import tweepy
 import os
+import tiny_road
 
 def get_api(cfg):
   auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
@@ -18,7 +19,7 @@ def main():
     }
 
   api = get_api(cfg)
-  tweet = "Hello, world! Again!"
+  tweet = tiny_road.make_tiny_road()
   status = api.update_status(status=tweet) 
   # Yes, tweet is called 'status' rather confusing
 
