@@ -59,13 +59,13 @@ def make_road():
 
 def make_sky():
     sky = ""
-    orb = random.choice(SKY)
+    tile = random.choice(SKY)
     
     for _ in range(12):
         sky += " "
-    orb_placement = random.randint(0,len(sky)-1)
+    tile_placement = random.randint(0,len(sky)-1)
 
-    sky = sky[:orb_placement] + orb + sky[orb_placement:]
+    sky = sky[:tile_placement] + tile + sky[tile_placement:]
     return sky
 
 if __name__ == "__main__":
